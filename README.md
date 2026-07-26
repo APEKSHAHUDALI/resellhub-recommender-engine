@@ -33,26 +33,6 @@ model into something you could actually deploy.
 - [Interview talking points](#talking-points-for-interviews)
 - [License](#license)
 
-## Why this is a good placement project to talk about
-
-- **Real data, not toy data.** Uses the UCI "Online Retail" dataset (541K
-  real UK e-commerce transactions) instead of `Faker`-generated fake events.
-- **A defensible modeling decision, not a shortcut.** The dataset has no
-  "reseller" field, so resellers are *derived* from real bulk-purchasing
-  behavior (median order-line quantity ≥ 12), a heuristic the dataset's own
-  documentation supports ("many customers... are wholesalers"). That's a
-  concrete story for an interview: *"the raw data didn't give me the label I
-  needed, so I derived it from a documented, auditable behavioral signal."*
-- **Cold-start is handled explicitly**, not ignored: the hybrid layer
-  detects low-interaction users and reweights away from collaborative
-  filtering toward content similarity and popularity, rather than serving
-  garbage recommendations to new users.
-- **It's evaluated, not just demoed.** `scripts/evaluate.py` runs a
-  time-based train/test split and reports precision@k / recall@k / NDCG@k /
-  hit-rate on real held-out data (numbers below).
-- **It's built like a service**, with JWT auth, Redis-cached endpoints,
-  scheduled retraining via Celery, health checks, Docker Compose, and CI.
-
 ## Real evaluation results
 
 Run via `PYTHONPATH=. python scripts/evaluate.py` (time-based holdout,
