@@ -245,7 +245,9 @@ Dataset: **"Online Retail"**, D. Chen, UCI Machine Learning Repository,
 CC BY 4.0 (https://doi.org/10.24432/C5BW33). Used here for a non-commercial,
 educational/portfolio project.
 
-## License
 Authors : B Sujan Kumar and Apeksha Sanjay Hudali. 
+
+## License
+
 MIT — see [LICENSE](./LICENSE). Copyright (c) 2026 B Sujan Kumar and
 Apeksha Sanjay Hudali. 
