@@ -217,28 +217,6 @@ cd backend
 PYTHONPATH=. pytest tests/ -v --cov=app
 ```
 
-## Talking points for interviews
-
-- **"Why hybrid instead of just collaborative filtering?"** Pure CF fails
-  completely on cold-start users/items — no history, no recommendation. The
-  content-based layer and popularity fallback exist specifically to cover
-  that gap, and the weight-switching logic in `hybrid.py` is the mechanism
-  that makes the handoff automatic rather than a special-cased branch.
-- **"How do you know it's actually good?"** Point to `scripts/evaluate.py`
-  and the time-based holdout numbers above — not vibes, a real protocol.
-- **"How would this scale?"** Training is already decoupled from serving
-  (offline batch job → pickled artifacts → hot-reloaded by mtime), so the
-  API's request path is O(1) lookups + cosine similarity, never a live
-  model fit. Redis caches full responses per user. The obvious next steps
-  (approximate nearest neighbors for the content vectors, a real feature
-  store, A/B testing infrastructure) are natural "if I had more time" answers.
-- **"What was the hardest bug?"** bcrypt hashing is deliberately slow
-  (~0.3s/call) — the initial data loader hashed the demo password once per
-  user (4,362 times), which alone accounted for ~20 minutes of runtime. The
-  fix was hashing once and reusing the hash across all demo accounts, since
-  they intentionally share one password. Good illustration of profiling
-  before optimizing: pandas and the DB writes were never the bottleneck.
-
 ## Authors  
 
 B Sujan Kumar and Apeksha Sanjay Hudali. 
