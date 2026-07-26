@@ -24,13 +24,11 @@ model into something you could actually deploy.
 **Built by:** B Sujan Kumar and Apeksha Sanjay Hudali
 
 ## Contents
-- [Why this project](#why-this-is-a-good-placement-project-to-talk-about)
 - [Evaluation results](#real-evaluation-results)
 - [Architecture](#architecture)
 - [Dataset & modeling decisions](#real-dataset--the-resellercustomer-split)
 - [Project layout](#project-layout)
 - [Running it](#running-it)
-- [Interview talking points](#talking-points-for-interviews)
 - [License](#license)
 
 ## Real evaluation results
