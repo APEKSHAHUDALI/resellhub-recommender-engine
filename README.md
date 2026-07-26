@@ -239,6 +239,10 @@ PYTHONPATH=. pytest tests/ -v --cov=app
   they intentionally share one password. Good illustration of profiling
   before optimizing: pandas and the DB writes were never the bottleneck.
 
+## Authors  
+
+B Sujan Kumar and Apeksha Sanjay Hudali. 
+
 ## Acknowledgments
 
 Dataset: **"Online Retail"**, D. Chen, UCI Machine Learning Repository,
@@ -246,6 +250,6 @@ CC BY 4.0 (https://doi.org/10.24432/C5BW33). Used here for a non-commercial,
 educational/portfolio project.
 
 ## License
-Authors : B Sujan Kumar and Apeksha Sanjay Hudali. 
+
 MIT — see [LICENSE](./LICENSE). Copyright (c) 2026 B Sujan Kumar and
 Apeksha Sanjay Hudali. 
